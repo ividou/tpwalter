@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- Main Content -->
+      <section class="container">
+        <nav class="navbar">
+          <div class="navbar_content">
+            <img src="img/logo.png" alt="ivi" width="3000px" height="auto" />
+            <ul>
+              <li>
+                <a href="../tpwalter/almacenadmin/index.php">PRODUCTOS</a>
+              </li>
+              <li><a href="/"></a></li>
+              <li><a href="/"></a></li>
+              <li><a href="/"></a></li>
+              <li><a href="/"></a></li>
+              <li><a href="/"></a></li>
+              <li><a href="/"></a></li>
+              <li><a href="/"></a></li>
+              <li><a href="/"></a></li>
+              <li><a href="/"></a></li>
+              <li><a href="/"></a></li>
+              <li><a href="/"></a></li>
+              <li><a href="/"></a></li>
+              <li><a href="/"></a></li>
+              <li><a href="/"></a></li>
+              <li><a href="/"></a></li>
+              <li><a href="/"></a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <section class="main-content">
+          <p>¡Bienvenido!</p>
+          <h1>Elige tu producto</h1>
+          <p>
+            Aquí encontrarás una selección exclusiva de componentes y accesorios
+            para gamers, en excelentes condiciones y a precios accesibles. No
+            sacrifiques el rendimiento por el costo; obtén lo mejor para tu PC
+            sin romper tu presupuesto.
+          </p>
+        </section>
+
+        <section class="side-content">
+          <div></div>
+          <img src="img/2060.png" alt="LOGO" />
+        </section>
+
+        <section class="footer">
+          <div id="button1">
+            <img src="img/rtx2060.png" alt="RTX 2060" />
+          </div>
+          <div id="button2">
+            <img src="../tpwalter/img/1660super.png" alt="GTX 1660SUPER" />
+          </div>
+          <div id="button3">
+            <img src="img/mother.png" alt="MOTHERBOARD ASUS ROG" />
+          </div>
+          <div id="button4">
+            <img src="img/ryzen5.png" alt="RYZEN 5 1600" />
+          </div>
+        </section>
+      </section>
+
+      <!-- Loader -->
+      <section class="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+      <!-- Modal -->
+      <section class="modal hidden">
+        <div class="modal__content">
+          <img
+            class="modal__content--close"
+            src="https://img.icons8.com/?size=100&id=8112&format=png&color=000000"
+            alt="Close"
+          />
+          <div class="modal__content--slide">
+            <input type="radio" name="slider-1" id="radio-1" checked />
+            <input type="radio" name="slider-1" id="radio-2" />
+            <input type="radio" name="slider-1" id="radio-3" />
+
+            <div class="cards">
+              <label for="radio-1" id="card-1" class="card">
+                <img src="img/rtx2060.png" alt="" />
+              </label>
+              <label for="radio-2" id="card-2" class="card">
+                <img src="img/rtx20602.png" alt="" />
+              </label>
+              <label for="radio-3" id="card-3" class="card">
+                <img src="img/rtx20603.png" alt="" />
+              </label>
+            </div>
+          </div>
+          <button class="modal-button">¡LO QUIERO YA!</button>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      const modal = document.querySelector(".modal");
+
+      const button1 = document.querySelector("#button1");
+      const button2 = document.querySelector("#button2");
+      const button3 = document.querySelector("#button3");
+      const button4 = document.querySelector("#button4");
+      const closeButton = document.querySelector(".modal__content--close");
+      const buyButton = document.querySelector(".modal-button");
+      buyButton.addEventListener("click", () => {
+        alert("Compra realizada!");
+      });
+
+      const card1 = document.querySelector("#card-1 img");
+      const card2 = document.querySelector("#card-2 img");
+      const card3 = document.querySelector("#card-3 img");
+
+      // Define los conjuntos de imágenes para cada botón
+      const imagenesButton1 = [
+        "img/rtx2060.png",
+        "img/rtx20602.png",
+        "img/rtx20603.png",
+      ];
+      const imagenesButton2 = [
+        "img/1660super.png",
+        "img/1660super2.png",
+        "img/1660super.png",
+      ];
+      const imagenesButton3 = [
+        "img/mother.png",
+        "img/mother2.png",
+        "img/mother3.png",
+      ];
+      const imagenesButton4 = [
+        "img/ryzen5.png",
+        "img/ryzen52.png",
+        "img/ryzen53.png",
+      ];
+
+      function actualizarImagenesModal(imagenes) {
+        card1.src = imagenes[0];
+        card2.src = imagenes[1];
+        card3.src = imagenes[2];
+      }
+
+      button1.addEventListener("click", () => {
+        actualizarImagenesModal(imagenesButton1);
+        modal.classList.remove("hidden");
+        modal.classList.add("visible");
+      });
+
+      button2.addEventListener("click", () => {
+        actualizarImagenesModal(imagenesButton2);
+        modal.classList.remove("hidden");
+        modal.classList.add("visible");
+      });
+
+      button3.addEventListener("click", () => {
+        actualizarImagenesModal(imagenesButton3);
+        modal.classList.remove("hidden");
+        modal.classList.add("visible");
+      });
+
+      button4.addEventListener("click", () => {
+        actualizarImagenesModal(imagenesButton4);
+        modal.classList.remove("hidden");
+        modal.classList.add("visible");
+      });
+
+      closeButton.addEventListener("click", () => {
+        modal.classList.add("hidden");
+        modal.classList.remove("visible");
+      });
+    </script>
+  </body>
+</html>
